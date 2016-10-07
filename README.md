@@ -3,6 +3,8 @@ Shiny app for the erccdashboard R package
 
 This Shiny app utilizes the R erccdashboard package to assess differential expression testing when using the ERCC controls. This app displays the output of the erccdashboard package and allows for some plot interaction to evaluate data points.
 
+To run the app you will need to bring the following in to an R session: DESCRIPTION, ui.R, server.R 
+
 Current Limitations of app 
 
 There are currently some limitations of the app that will hopefully be rectified upon updates to the erccdashboard package code. Currently only the Dynamic Range and MA plots are interactive. To obtain the console output click on the "Console Output" tab. In the current version runDashboard() is called a second time to display the console. This is not ideal or efficient. Further updates to this will occur when the dashboard code is update. Reactivity of app is not working quite as intended. It appears if console tab is click prior to plots tab this can alter what is presented and display will be incomplete. Again there is an issue within erccdashbord that could be leading to the problem and will be addressed upon update. If running this app it is currently recommended that user inputs all required information in info fields only once. If you wish to rerun with new values restart the app and re-enter for full output.
