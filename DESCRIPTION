@@ -1,0 +1,8 @@
+Title: erccdashboard Shiny App
+Author: Jennifer McDaniel
+DisplayMode: Normal
+Tags: getting-started
+Type: Shiny
+Imports:
+  erccdashboard,
+  DT
