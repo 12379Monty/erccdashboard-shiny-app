@@ -28,7 +28,12 @@ fluidPage(
       
         numericInput('choseFDR', 'Define False Discovery Rate (FDR)', value= 0.05, step=.01, min=0),
       
-        textInput('filenameRoot', 'File Name Prefix for Output Files', value= ""), " "
+        textInput('filenameRoot', 'File Name Prefix for Output Files', value= ""),
+        
+        actionButton("go", "Run!"),
+        
+        p("Once all information has been entered or updated click \"Run!\" to run the erccdashbord")
+
     ),
     
     mainPanel( 
