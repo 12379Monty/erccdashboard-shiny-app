@@ -1,6 +1,14 @@
-
 function(input, output) {
   
+  output$Data <- renderTable({
+    
+    if (is.null(input$exTable))
+      return(NULL)
+    
+    inFile <- input$exTable
+    read.csv(inFile$datapath, header=input$header, sep=input$sep, row.names=1)
+    
+  })
   #LODR
   # observeEvent(input$user_click1, interaction_type <<- "click")
   # observeEvent(input$user_brush1, interaction_type <<- "brush")
@@ -22,7 +30,7 @@ function(input, output) {
   # observeEvent(input$user_brush5, interaction_type <<- "brush")
   
   
-  runDB <- reactive({  
+  runDB <- eventReactive(input$go, {  
     
     inFile <- input$exTable
     
@@ -32,7 +40,8 @@ function(input, output) {
                          repNormFactor = NULL, filenameRoot = input$filenameRoot,
                          sample1Name = input$sample1Name, sample2Name = input$sample2Name,
                          erccmix = "RatioPair", erccdilution = input$erccdilution , spikeVol = input$spikeVol,
-                         totalRNAmass = input$totalRNAmass, choseFDR = input$choseFDR, ratioLim = c(-4, 4), signalLim = c(-14,14), userMixFile = NULL)
+                         totalRNAmass = input$totalRNAmass, choseFDR = input$choseFDR, ratioLim = c(-4, 4), 
+                         signalLim = c(-14,14), userMixFile = NULL)
     
     # The following was an attempt to capture the console output and add it to the exDat list.  I had hoped I could
     # do this and call this list member to be displayed in console output tab.  I noticed two things when doing it this
@@ -50,12 +59,12 @@ function(input, output) {
     return(dash)
     
   })
-  
+
   # This function is used to print console output to app. It seems like I shouldn't need an additonal
   # reactive function to do this but this was the only way to get the console output otherwise the list
   # object was just returned.  With this function both the console output and list object are returned
   # within the Console Output tab in the app however this slows down the app as the runDashboard function 
-  # is run twice. The purpose of reactive is to minimize re-running of functions this defeats that purpose.
+  # # is run twice. The purpose of reactive is to minimize re-running of functions this defeats that purpose.
   console.out <- reactive({
 
     inFile <- input$exTable
@@ -118,19 +127,19 @@ function(input, output) {
   output$dr <- renderText("Dynamic Range Plot")
   output$PlotDR <- renderPlot({runDB()$Figures$dynRangePlot})
   output$table2 <- DT::renderDataTable({DT::datatable(dr())})
-  
+
   output$ma <- renderText("MA Plot")
   output$PlotMA <- renderPlot({runDB()$Figures$maPlot})
   output$table3 <- DT::renderDataTable({DT::datatable(ma())})
-  
+
   output$roc <- renderText("ROC Plot")
   output$PlotROC <- renderPlot({runDB()$Figures$rocPlot})
   #output$table4 <- DT::renderDataTable({DT::datatable(dr())})
-  
+
   output$effects <- renderText("ERCC Effects Plot")
   output$PlotEffects <- renderPlot({runDB()$Figures$rangeResidPlot})
   #output$table5 <- DT::renderDataTable({DT::datatable(dr())})
   
   output$console <- renderPrint({console.out()})
-  
+ 
 }
