@@ -65,7 +65,7 @@ function(input, output) {
   # object was just returned.  With this function both the console output and list object are returned
   # within the Console Output tab in the app however this slows down the app as the runDashboard function 
   # # is run twice. The purpose of reactive is to minimize re-running of functions this defeats that purpose.
-  console.out <- reactive({
+  console.out <- eventReactive(input$go, {
 
     inFile <- input$exTable
     data <- read.csv(inFile$datapath,header=input$header, sep=input$sep, row.names=1)
