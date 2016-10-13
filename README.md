@@ -6,6 +6,7 @@ This Shiny app utilizes the R erccdashboard package to assess technical performa
 To run the app you will need to bring the following in to an R session:  DESCRIPTION,  ui.R,  server.R  
 
 Below is the R Studio session information under which the application was developed:
+
 R version 3.2.1 (2015-06-18)
 Platform: x86_64-apple-darwin13.4.0 (64-bit)
 Running under: OS X 10.10.5 (Yosemite)
