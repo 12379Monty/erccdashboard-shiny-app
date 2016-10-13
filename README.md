@@ -3,7 +3,7 @@ Shiny app for the erccdashboard R package
 
 This Shiny app utilizes the R erccdashboard package to assess technical performance of gene expression experimetns when using the ERCC controls. This app displays the output of the erccdashboard package and allows for some plot interactions to evaluate individual or mulitple data points.
 
-To run the app you will need to bring the following in to an R session:  DESCRIPTION,  ui.R,  server.R  
+To run the app you will need to bring the following in to an R Studio session:  DESCRIPTION,  ui.R,  server.R  
 
 Below is the R Studio session information under which the application was developed:
 
