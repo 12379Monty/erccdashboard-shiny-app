@@ -5,7 +5,46 @@ This Shiny app utilizes the R erccdashboard package to assess technical performa
 
 To run the app you will need to bring the following in to an R session:  DESCRIPTION,  ui.R,  server.R  
 
-This application was created with the following required packages: shiny 0.14, erccdashboard 1.6.0, and DT 0.2
+Below is the R Studio session information under which the application was developed:
+R version 3.2.1 (2015-06-18)
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+Running under: OS X 10.10.5 (Yosemite)
+ 
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+ 
+attached base packages:
+[1] stats     graphics  grDevices utils   
+[5] datasets  methods   base    
+ 
+other attached packages:
+[1] erccdashboard_1.6.0 gridExtra_2.2.1   
+[3] ggplot2_2.1.0       DT_0.2            
+[5] shiny_0.14        
+ 
+loaded via a namespace (and not attached):
+[1] Rcpp_0.12.7        pracma_1.9.5      
+ [3] plyr_1.8.4         bitops_1.0-6     
+ [5] tools_3.2.1        digest_0.6.10    
+ [7] jsonlite_1.1       gtable_0.2.0     
+ [9] nlme_3.1-128       lattice_0.20-34  
+[11] mgcv_1.8-15        Matrix_1.2-7.1   
+[13] yaml_2.1.13        QuasiSeq_1.0-8   
+[15] stringr_1.1.0      sourcetools_0.1.5
+[17] htmlwidgets_0.7    gtools_3.5.0     
+[19] caTools_1.17.1     locfit_1.5-9.1   
+[21] grid_3.2.1         qvalue_2.2.2     
+[23] R6_2.1.3           limma_3.26.9      
+[25] gdata_2.17.0       reshape2_1.4.1   
+[27] ROCR_1.0-7         edgeR_3.12.1     
+[29] magrittr_1.5       splines_3.2.1    
+[31] scales_0.4.0       gplots_3.0.1     
+[33] htmltools_0.3.5    MASS_7.3-45      
+[35] mime_0.5           xtable_1.8-2      
+[37] colorspace_1.2-6   httpuv_1.3.3     
+[39] labeling_0.3       quadprog_1.5-5   
+[41] KernSmooth_2.23-15 stringi_1.1.1    
+[43] munsell_0.4.3    
 
 Current Limitations of app 
 
